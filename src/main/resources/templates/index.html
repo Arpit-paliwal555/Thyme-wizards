@@ -6,9 +6,10 @@
     <meta charset="UTF-8">
     <title>Taming Thymeleaf</title>
     <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/tailwind.css}">
 </head>
 <body>
-<h1 th:text="${pageTitle}">Taming Thymeleaf</h1>
+<h1 class="text-2xl font-bold text-blue-700" th:text="${pageTitle}">Taming Thymeleaf</h1>
 <div>
     <ul>
         <li th:each="scientist : ${scientists}">
