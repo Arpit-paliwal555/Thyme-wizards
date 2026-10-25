@@ -10,24 +10,6 @@ const tailwindcss = require('@tailwindcss/postcss');
 
 const production = environments.production;
 
-gulp.task('watch', () => {
-    browserSync.init({
-        proxy: 'localhost:8080',
-    });
-
-    const watchers = [
-        gulp.watch(['src/main/resources/**/*.html'], gulp.series('copy-html+css-and-reload')),
-        gulp.watch(['src/main/resources/**/*.svg'], gulp.series('copy-svg+css-and-reload')),
-        gulp.watch(['src/main/resources/**/*.css'], gulp.series('copy-css-and-reload')),
-        gulp.watch(['src/main/resources/**/*.js'], gulp.series('copy-js-and-reload')),
-    ];
-
-    return Promise.all(watchers.map(watcher => new Promise((resolve, reject) => {
-        watcher.once('close', resolve);
-        watcher.once('error', reject);
-    })));
-});
-
 gulp.task('copy-html', () =>
     gulp.src(['src/main/resources/**/*.html'])
         .pipe(gulp.dest('target/classes/'))
@@ -71,6 +53,23 @@ gulp.task('copy-js-and-reload', gulp.series('copy-js', reload));
 gulp.task('copy-svg+css-and-reload', gulp.series('copy-svg', 'copy-css', reload));
 
 gulp.task('build', gulp.series('copy-html', 'copy-css', 'copy-js', 'copy-svg'));
+gulp.task('watch', gulp.series('build', () => {
+    browserSync.init({
+        proxy: 'localhost:8080',
+    });
+
+    const watchers = [
+        gulp.watch(['src/main/resources/**/*.html'], gulp.series('copy-html+css-and-reload')),
+        gulp.watch(['src/main/resources/**/*.svg'], gulp.series('copy-svg+css-and-reload')),
+        gulp.watch(['src/main/resources/**/*.css'], gulp.series('copy-css-and-reload')),
+        gulp.watch(['src/main/resources/**/*.js'], gulp.series('copy-js-and-reload')),
+    ];
+
+    return Promise.all(watchers.map(watcher => new Promise((resolve, reject) => {
+        watcher.once('close', resolve);
+        watcher.once('error', reject);
+    })));
+}));
 gulp.task('default', gulp.series('watch'));
 
 function reload(done) {
