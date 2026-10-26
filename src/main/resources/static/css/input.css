@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @source "../../templates";
+
+@theme {
+    --color-taming-thymeleaf-green: darkseagreen;
+}

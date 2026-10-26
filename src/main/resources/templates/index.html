@@ -9,11 +9,11 @@
     <link rel="stylesheet" th:href="@{/css/tailwind.css}">
 </head>
 <body>
-<h1 class="text-2xl font-bold text-blue-700" th:text="${pageTitle}">Taming Thymeleaf</h1>
-<div>
-    <ul>
+<header th:replace="~{fragments/page-header :: pageHeader(${pageTitle})}"></header>
+<div class="mx-6">
+    <ul class="list-disc mx-6 text-sm">
         <li th:each="scientist : ${scientists}">
-            <span th:text="${scientist}">Scientist Name</span>
+            <span th:text="${scientist}"></span>
         </li>
     </ul>
 </div>
