@@ -13,7 +13,7 @@ public class RootController {
 
     @GetMapping
     public String index(Model model) {
-        model.addAttribute("pageTitle", "Taming Thymeleaf");
+        model.addAttribute("pageTitle", "Taming Thymeleaf Fragment title");
         model.addAttribute("scientists", List.of("Marie Curie", "Albert Einstein", "Isaac Newton", "Charles Darwin"));
         return "index";
     }
