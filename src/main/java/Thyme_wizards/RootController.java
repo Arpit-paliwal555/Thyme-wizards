@@ -17,4 +17,5 @@ public class RootController {
         model.addAttribute("scientists", List.of("Marie Curie", "Albert Einstein", "Isaac Newton", "Charles Darwin"));
         return "index";
     }
+
 }
