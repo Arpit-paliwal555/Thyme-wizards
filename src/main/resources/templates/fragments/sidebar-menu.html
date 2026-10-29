@@ -1,0 +1,10 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="mobile"
+     class="md:hidden"
+     x-show="isVisible()">
+    ...
+</div>
+<div th:fragment="desktop" class="hidden md:flex md:flex-shrink-0">
+    ...
+</div>
+</html>

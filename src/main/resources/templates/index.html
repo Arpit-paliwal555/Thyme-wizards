@@ -7,14 +7,38 @@
     <title>Taming Thymeleaf</title>
     <link rel="stylesheet" th:href="@{/css/main.css}">
     <link rel="stylesheet" th:href="@{/css/tailwind.css}">
+    <script th:src="@{/js/user-popup-menu.js}"></script>
 </head>
 <body>
 <header th:replace="~{fragments/page-header :: pageHeader(${pageTitle})}"></header>
-<div class="mx-6">
-<!--    <a th:replace="fragments/menu-item :: menu-item('Dashboard', '/dashboard', ~{dashboard})">-->
-<!--        <svg th:replace="dashboard"></svg>-->
-<!--    </a>-->
-    <svg th:replace="dashboard"></svg>
-</div>
+    <div class="h-screen flex overflow-hidden bg-gray-100"
+         x-data="sidebarMenu()"
+         @keydown.window.escape="closeSidebar">
+        <!-- Off-canvas menu for mobile -->
+        <div th:replace="fragments/sidebar-menu :: mobile"></div>
+
+        <!-- Static sidebar for desktop -->
+        <div th:replace="fragments/sidebar-menu :: desktop"></div>
+
+        <div class="flex flex-col w-0 flex-1 overflow-hidden">
+            <div th:replace="fragments/top-menu :: menu"></div>
+
+            <main class="flex-1 relative z-0 overflow-y-auto py-6 focus:outline-none" tabindex="0">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                    <h1 class="text-2xl font-semibold text-gray-900">Dashboard
+                    </h1>
+                </div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                    <!-- Replace with your content -->
+                    <div class="py-4">
+                        <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
+                            <div>There is some content here.</div>
+                        </div>
+                    </div>
+                    <!-- /End replace -->
+                </div>
+            </main>
+        </div>
+    </div>
 </body>
 </html>
