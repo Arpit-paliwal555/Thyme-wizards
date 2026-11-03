@@ -49,7 +49,7 @@
             <div class="mt-5 flex-1 h-0 overflow-y-auto">
                 <nav class="px-2">
                     <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'Dashboard', 'dashboard')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'Team', 'team')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('/teams/all', 'Team', 'team')}"></a>
                     <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'Projects', 'projects')}"></a>
                     <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'Calendar', 'calendar')}"></a>
                     <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'Documents', 'documents')}"></a>
@@ -72,7 +72,7 @@
                 <!-- tag::desktop-nav[] -->
                 <nav class="flex-1 px-2 bg-white">
                     <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'Dashboard', 'dashboard')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'Team', 'team')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('/teams/all', 'Team', 'team')}"></a>
                     <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'Projects', 'projects')}"></a>
                     <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'Calendar', 'calendar')}"></a>
                     <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'Documents', 'documents')}"></a>
