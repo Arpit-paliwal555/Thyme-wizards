@@ -4,9 +4,8 @@ import Thyme_wizards.team.Team;
 import Thyme_wizards.team.TeamService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.SortedSet;
 import java.util.List;
 
@@ -38,5 +37,23 @@ public class TeamController {
         model.addAttribute("player", service.getPlayerOnTeam(teamId, playerId));
         return "teams/info";
     }
-}
 
+    @PostMapping("/{id}")
+    public String editTeamName(@PathVariable("id") String teamId,
+                               @ModelAttribute("editTeamFormData") EditTeamFormData formData) {
+        service.changeTeamName(teamId, formData.getTeamName());
+        return "redirect:/teams/all";
+    }
+
+    public static class EditTeamFormData {
+        private String teamName;
+
+        public String getTeamName() {
+            return teamName;
+        }
+
+        public void setTeamName(String teamName) {
+            this.teamName = teamName;
+        }
+    }
+}

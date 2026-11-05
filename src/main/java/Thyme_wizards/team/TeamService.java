@@ -10,4 +10,6 @@ public interface TeamService {
     @Nullable Object getTeamInfo(String teamId);
 
     @Nullable Object getPlayerOnTeam(String teamId, String playerId);
+
+    void changeTeamName(String teamId, String teamName);
 }
