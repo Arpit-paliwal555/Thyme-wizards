@@ -1,5 +1,6 @@
 package Thyme_wizards.team;
 
+import org.jspecify.annotations.Nullable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -24,6 +25,21 @@ public class TeamServiceImpl implements TeamService {
         teams.add(new Team(4, "Rookies"));
         teams.add(new Team(5, "Wizards"));
         return teams;
+    }
+
+    @Override
+    public @Nullable Object getTeamInfo(String teamId) {
+        return null;
+    }
+
+    @Override
+    public @Nullable Object getPlayerOnTeam(String teamId, String playerId) {
+        return null;
+    }
+
+    @Override
+    public void changeTeamName(String teamId, String teamName) {
+
     }
 
 }
