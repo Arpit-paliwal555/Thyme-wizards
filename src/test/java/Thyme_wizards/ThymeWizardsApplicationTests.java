@@ -8,6 +8,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -28,5 +29,13 @@ class ThymeWizardsApplicationTests {
 	@Test
 	void teamsTemplateRendersSidebarFragments() throws Exception {
 		mockMvc.perform(get("/teams/all")).andExpect(status().isOk());
+	}
+
+	@Test
+	void usersTemplateRendersDummyUsers() throws Exception {
+		mockMvc.perform(get("/users"))
+				.andExpect(status().isOk())
+				.andExpect(content().string(org.hamcrest.Matchers.containsString("Alex Johnson")))
+				.andExpect(content().string(org.hamcrest.Matchers.containsString("morgan.lee@example.com")));
 	}
 }
