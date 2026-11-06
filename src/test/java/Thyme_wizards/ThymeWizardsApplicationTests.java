@@ -24,4 +24,9 @@ class ThymeWizardsApplicationTests {
 	void indexTemplateRendersSidebarFragments() throws Exception {
 		mockMvc.perform(get("/")).andExpect(status().isOk());
 	}
+
+	@Test
+	void teamsTemplateRendersSidebarFragments() throws Exception {
+		mockMvc.perform(get("/teams/all")).andExpect(status().isOk());
+	}
 }

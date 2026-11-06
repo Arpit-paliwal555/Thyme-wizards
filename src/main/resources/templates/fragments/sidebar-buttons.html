@@ -19,14 +19,14 @@
 </a>
 <!-- end::mobile-button[] -->
 
-<a th:fragment="desktop-button(link, title, menuItem)"
+<a th:fragment="desktop-button(link, title, menuItem, icon)"
    th:href="${link}"
    class="group flex items-center px-2 py-2 text-sm font-medium rounded-md"
    th:classappend="${activeMenuItem == menuItem}? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'"
 >
     <div class="mr-3 h-6 w-6"
          th:classappend="${activeMenuItem == menuItem}?'text-gray-500':'text-gray-400 group-hover:text-gray-500'">
-        <svg th:replace="~{${'svg/' + menuItem} :: icon}"></svg>
+        <svg th:replace="~{${'svg/' + icon} :: icon}"></svg>
     </div>
     [[${title}]]
 </a>
