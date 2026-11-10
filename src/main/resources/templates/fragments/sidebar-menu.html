@@ -35,7 +35,7 @@
                 -->
                 <button class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                         @click="closeSidebar">
-                    <span class="sr-only">Close sidebar</span>
+                    <span class="sr-only" th:text="#{sidebar.close}">Close sidebar</span>
                     <!-- Heroicon name: x -->
                     <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor" aria-hidden="true">
@@ -48,12 +48,12 @@
             </div>
             <div class="mt-5 flex-1 h-0 overflow-y-auto">
                 <nav class="px-2">
-                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'Dashboard', 'dashboard')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('/teams/all', 'Team', 'team')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'Projects', 'projects')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'Calendar', 'calendar')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'Documents', 'documents')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'Reports', 'reports')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'nav.dashboard', 'dashboard')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('/teams/all', 'nav.team', 'team')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'nav.projects', 'projects')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'nav.calendar', 'calendar')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'nav.documents', 'documents')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: mobile-button('#', 'nav.reports', 'reports')}"></a>
                 </nav>
             </div>
         </div>
@@ -71,14 +71,14 @@
             <div class="mt-5 flex-grow flex flex-col">
                 <!-- tag::desktop-nav[] -->
                 <nav class="flex-1 px-2 bg-white">
-                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'Dashboard', 'dashboard', 'dashboard')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button(link=@{/users}, title='Users', menuItem='users', icon='users')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button(link=@{/teams/all}, title='Teams', menuItem='teams', icon='user-group')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('/teams/all', 'Team', 'team', 'team')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'Projects', 'projects', 'projects')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'Calendar', 'calendar', 'calendar')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'Documents', 'documents', 'documents')}"></a>
-                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'Reports', 'reports', 'reports')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'nav.dashboard', 'dashboard', 'dashboard')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button(link=@{/users}, title='nav.users', menuItem='users', icon='users')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button(link=@{/teams/all}, title='nav.teams', menuItem='teams', icon='user-group')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('/teams/all', 'nav.team', 'team', 'team')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'nav.projects', 'projects', 'projects')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'nav.calendar', 'calendar', 'calendar')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'nav.documents', 'documents', 'documents')}"></a>
+                    <a th:replace="~{fragments/sidebar-buttons :: desktop-button('#', 'nav.reports', 'reports', 'reports')}"></a>
                 </nav>
                 <!-- end::desktop-nav[] -->
             </div>

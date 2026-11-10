@@ -15,7 +15,7 @@
          th:classappend="${activeMenuItem == menuItem}?'text-gray-500':'text-gray-400 group-hover:text-gray-500'">
         <svg th:replace="~{${'svg/' + menuItem} :: icon}"></svg>
     </div>
-    [[${title}]]
+    <span th:text="#{${title}}">Menu item</span>
 </a>
 <!-- end::mobile-button[] -->
 
@@ -28,7 +28,7 @@
          th:classappend="${activeMenuItem == menuItem}?'text-gray-500':'text-gray-400 group-hover:text-gray-500'">
         <svg th:replace="~{${'svg/' + icon} :: icon}"></svg>
     </div>
-    [[${title}]]
+    <span th:text="#{${title}}">Menu item</span>
 </a>
 
 </html>

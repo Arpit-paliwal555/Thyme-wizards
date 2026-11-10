@@ -1,5 +1,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="menu" class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
-    ...
+    <form method="get" class="ml-auto flex items-center gap-2 px-4">
+        <label for="language" class="text-sm font-medium text-gray-700" th:text="#{language.label}">Language</label>
+        <select id="language" name="lang"
+                class="rounded-md border-gray-300 text-sm shadow-sm focus:border-green-600 focus:ring-green-600">
+            <option value="en" th:selected="${#locale.language == 'en'}" th:text="#{language.english}">English</option>
+            <option value="fr" th:selected="${#locale.language == 'fr'}" th:text="#{language.french}">French</option>
+        </select>
+        <button type="submit" class="rounded-md bg-green-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-800"
+                th:text="#{language.change}">Change</button>
+    </form>
 </div>
 </html>
