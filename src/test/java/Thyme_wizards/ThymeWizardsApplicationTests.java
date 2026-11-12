@@ -39,6 +39,7 @@ class ThymeWizardsApplicationTests {
 				.andExpect(status().isOk())
 				.andExpect(content().string(org.hamcrest.Matchers.containsString("lang=\"en\"")))
 				.andExpect(content().string(org.hamcrest.Matchers.containsString("name=\"lang\" onchange=\"this.form.submit()\"")))
+				.andExpect(content().string(org.hamcrest.Matchers.not(org.hamcrest.Matchers.containsString("type=\"submit\""))))
 				.andExpect(content().string(org.hamcrest.Matchers.containsString("Language")))
 				.andExpect(content().string(org.hamcrest.Matchers.containsString(">Users</h1>")))
 				.andExpect(content().string(org.hamcrest.Matchers.containsString("Alex Johnson")))
