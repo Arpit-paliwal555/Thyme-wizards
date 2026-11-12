@@ -2,7 +2,7 @@
 <div th:fragment="menu" class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
     <form method="get" class="ml-auto flex items-center gap-2 px-4">
         <label for="language" class="text-sm font-medium text-gray-700" th:text="#{language.label}">Language</label>
-        <select id="language" name="lang"
+        <select id="language" name="lang" onchange="this.form.submit()"
                 class="rounded-md border-gray-300 text-sm shadow-sm focus:border-green-600 focus:ring-green-600">
             <option value="en" th:selected="${#locale.language == 'en'}" th:text="#{language.english}">English</option>
             <option value="fr" th:selected="${#locale.language == 'fr'}" th:text="#{language.french}">French</option>
