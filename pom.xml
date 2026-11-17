@@ -97,7 +97,8 @@
 				<artifactId>jpearl-maven-plugin</artifactId>
 				<version>${jpearl.version}</version>
 				<configuration>
-					<basePackage>com.tamingthymeleaf.application</basePackage>
+					<basePackage>Thyme_wizards</basePackage>
+					<entityPackage>Thyme_wizards.user.jpa</entityPackage>
 				</configuration>
 			</plugin>
 			<plugin>
