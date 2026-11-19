@@ -3,9 +3,11 @@ package Thyme_wizards.user.jpa;
 import io.github.wimdeblauwe.jpearl.AbstractEntity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import org.hibernate.annotations.Audited;
 
 @Entity
+@Table(name = "tw_user")
 @Audited.Table(name = "tt_user")
 public class User extends AbstractEntity<UserId> {
 

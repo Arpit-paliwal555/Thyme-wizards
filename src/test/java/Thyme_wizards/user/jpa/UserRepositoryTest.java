@@ -46,7 +46,7 @@ class UserRepositoryTest {
         repository.save(new User(id));
 
         entityManager.flush();
-        UUID idInDb = jdbcTemplate.queryForObject("SELECT id FROM tt_user", UUID.class); //<.>
+        UUID idInDb = jdbcTemplate.queryForObject("SELECT id FROM tw_user", UUID.class); //<.>
         assertThat(idInDb).isEqualTo(id.getId());
     }
     @TestConfiguration //<.>
